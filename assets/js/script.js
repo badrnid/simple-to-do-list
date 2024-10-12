@@ -14,9 +14,9 @@ if (localStorage.getItem('tasks')) {
 // ######################
 
 add.onclick = function () {
-    if (input.value === "") {
-        alert('Please enter a valid text');
-    }
+    // if (input.value === "") {
+    //     alert('Please enter a valid text');
+    // }
     if (input.value !== "") {
         addTaskToArray(input.value);
         input.value = "";
@@ -57,11 +57,12 @@ function addTaskToForm(tasksArray) {
         div.setAttribute("data-id", taskData.id);
         div.appendChild(document.createTextNode(taskData.title));
         
-        // div.onclick = function () {
-        //     div.classList.toggle('done'); 
-        //     taskCompleted(taskData.id);
-             
-        // }
+        div.onclick = function () {
+            div.classList.toggle('done'); 
+            taskCompleted(taskData.id);
+     
+        }
+
 
         tasks.appendChild(div);
 
@@ -88,16 +89,17 @@ function deleteTask(id) {
         addTaskToForm(tasksArray);
 
     }
-    // function taskComplete(id) {
-    //     tasksArray = tasksArray.map((task) => {
-    //         if (task.id === id) {
-    //             task.completed = !task.completed;
-    //         }
+    function taskCompleted(id) {
+        tasksArray = tasksArray.map((task) => {
+            if (task.id === id) {
+                task.completed = !task.completed;
+                console.log(tasksArray);
+            }
              
-    //       localStorage.setItem('tasks', JSON.stringify(tasksArray));
-    //       addTaskToForm(tasksArray);
-    //         return task;
+          localStorage.setItem('tasks', JSON.stringify(tasksArray));
+          addTaskToForm(tasksArray);
+            return task;
             
-    //     });
+        });
 
-    // }
+    }
