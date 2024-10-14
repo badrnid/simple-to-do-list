@@ -7,16 +7,16 @@ let tasksArray = [];
 
 
 // ##### LOAD TASKS #####
+
+
 if (localStorage.getItem('tasks')) {
     tasksArray = JSON.parse(localStorage.getItem('tasks'));
     addTaskToForm(tasksArray);
 }
+
 // ######################
 
 add.onclick = function () {
-    // if (input.value === "") {
-    //     alert('Please enter a valid text');
-    // }
     if (input.value !== "") {
         addTaskToArray(input.value);
         input.value = "";
@@ -24,6 +24,7 @@ add.onclick = function () {
 };
 
 function addTaskToArray(task) {
+    
     const taskData = {
      id: Date.now(),
      title: task,
@@ -33,7 +34,6 @@ function addTaskToArray(task) {
     tasksArray.push(taskData);
 
     
-
     // ######### STORE TASKS ###########
 
     localStorage.setItem('tasks', JSON.stringify(tasksArray));
@@ -42,11 +42,15 @@ function addTaskToArray(task) {
     addTaskToForm(tasksArray);
 }
 
+
+
+
 function addTaskToForm(tasksArray) {
 
     tasks.innerHTML = ""; // Empty tasks div
 
     tasksArray.forEach((taskData) => {
+
         let div = document.createElement('div');
         div.className = "task";
 
@@ -81,6 +85,8 @@ function addTaskToForm(tasksArray) {
         
     });
 }
+
+
 function deleteTask(id) {
 
         tasksArray = tasksArray.filter((task) => task.id !== id);
@@ -90,10 +96,10 @@ function deleteTask(id) {
 
     }
     function taskCompleted(id) {
+
         tasksArray = tasksArray.map((task) => {
             if (task.id === id) {
                 task.completed = !task.completed;
-                console.log(tasksArray);
             }
              
           localStorage.setItem('tasks', JSON.stringify(tasksArray));
@@ -101,5 +107,8 @@ function deleteTask(id) {
             return task;
             
         });
+        
 
-    }
+
+
+}

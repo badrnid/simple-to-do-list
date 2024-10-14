@@ -1,38 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-
 * {
     margin:  0;
     padding:  0;
     font-family: 'Poppins';
 }
-
-
-
 header {
     background: rgb(93, 93, 232);
     height: 10vh;
     text-align: center;
-    display: flex;           /* Flexbox for vertical alignment */
+    display: flex;         
     justify-content: center;
     align-items: center;
-
 }
-
-
-
 .navbar .logo a{
     color: white;
     text-decoration: none;
     font-family: 'Poppins';
     font-weight: 700;
     font-size: 24px;
-    height: 11%;
-    
-
-
 }
-
 main {
     max-width: 320px;
     margin: 0 auto;
@@ -63,7 +49,7 @@ main {
     border: none;
     border-radius: 5px;
     color: white;
-    transition: .3s;
+    transition: 0.3s;
     margin-left:  5px;
 }
 
@@ -73,25 +59,18 @@ main {
     color: rgb(93, 93, 232);
     border: 1px solid rgb(93, 93, 232);
 }
-
-
 .tasks {
      background: transparent;
      justify-content: center;
      align-items: center;
      margin-top: -120px;
      height: auto;
-     border-radius: 10px;
-     
-     
+     border-radius: 10px;  
 }
-
 .tasks .task .buttons {
     display: flex;
-    gap: 5px; /* Adjust this value to control the spacing between buttons */
+    gap: 5px; 
 }
-
-
 .tasks .task {
     background-color: white;
     padding: 10px;
@@ -103,9 +82,6 @@ main {
     cursor: pointer;
     border: 1px solid #ccc;
     font-size: 13px;
-  }
-  .tasks .task {
-    margin-bottom: 15px;
   }
   .tasks .task:hover {
     background-color: rgba(93, 93, 232, 0.142);
@@ -124,15 +100,11 @@ main {
     padding: 2px 6px;
     border-radius: 4px;
     cursor: pointer;
-    z-index: 11;
     transition: 0.3s ;
-    
-  }
-
+}
   .tasks .task span:hover {
     background: rgb(181, 12, 12);
   }
-
   .tasks .task .complete {
     font-weight: bold;
     font-size: 20px;
